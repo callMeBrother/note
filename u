@@ -1,0 +1,252 @@
+集成的模块  只是在对应的模块下面进行修改，就可以同步在集成的模块
+
+dao中接口的实现方法都在myBatis(调用实体)
+
+
+泛型的使用
+class TestGen2＜K extents String,V extends Number＞  extends hh{};
+编写泛型类要注意： 
+1) 在定义一个泛型类的时候，在 “＜＞”之间定义形式类型参数，例如：“class TestGen＜K,V＞”，其中“K” , “V”不代表值，而是表示类型。 
+2) 实例化泛型对象的时候，一定要在类名后面指定类型参数的值（类型），一共要有两次书写。例如：
+TestGen＜String,String＞ t=new TestGen＜String,String＞()； 
+3) 泛型中＜K extends Object＞,extends并不代表继承，它是类型范围限制。
+
+instanceof 的用法
+instanceof 是用来判断某个对象是否是某个类的一个实例，如果是，则返回true，否则是false。
+instanceof操作多用于多态中判断是否是该类型或该类型的父类，比较的两者要么有类型对等的关系要么有继承的关系，
+没有关系的两者进行比较，编译是无法通过的。
+
+
+第一次修改html文件，还是需要清一下缓存，之后就不用了
+
+Ajax
+dataType与contentType的区别
+dataType是返回的类型，在成功后的date值得类型
+contentType是客户端到服务器
+
+
+js中delete的使用，
+1通常用来删除对象的属性，而不是一般的对象（通过Json向后台传值得时候）
+
+
+
+
+dubbo个人总结（分三个部分注册中心zookeeper、服务提供者provide、服务消费方consumer）
+作用：1.透明化的远程调用方法，就像调用本地方法一样调用远程方法
+2.服务自动注册与发现，不需要写死服务提供方的地址，注册中心基于接口名查询服务提供者的ip
+学习网站：http://dubbo.io/Home-zh.htm
+
+
+
+jetty与tomcat一样都是服务器
+但是jetty更轻量级，对于大量的互联网应用而言，不需要tomcat其他的高级特性
+
+
+System.in.read(); 按任意键退出
+
+
+网关（Gateway）:从一个网络连接到另一个网络的关口
+
+patch  补丁
+
+staple 史泰博 办公用品购买网站
+
+Teamviewer远程桌面连接   
+
+
+maven.yonyou.com   远程库代码
+
+
+强制更细maven的配置信息
+-U compile
+nexus downloadSources develop
+
+
+调用出运行界面win+r
+
+
+
+xshell查看日志
+首先退到最原始的路径
+ctrl+c退出当前任务
+ls 查看目录         
+cd 切换到某目录下  cd /exports/log/checkbiz
+tail 尾内容        --# tail -100f  checkbiz-debug.log
+
+cd ..     退出目录（逐层退出）
+
+ls -d export*  查询显示当前目录下含有export的文件，*代表所有，？代表一个
+
+ls ./  显示当前目录下的文件
+ls ../ 显示同级的所有文件
+
+
+最原始的路径为：[rot@yc-int-tomcat-01 log] 
+到指定的路径下 # cd checkbiz
+这个时候可用ls查看下面所有的包
+然后可以用 --# tail -100f  cpu-check-service-debug.log看日志
+
+三个日志包：分别是debug（内容比较全），error，mybatis 
+
+shell里面查看进程、杀死进程、启动服务、查看日志的指令
+
+ps -ef|grep score
+
+  ./startup.sh  启动tomacat
+
+
+回显招标文件的状态为评分中
+
+在logs文件夹下tail -1000f catalina.out 显示启动信息
+
+杀死进程 kill -9 5053
+
+端口值是下面的
+
+
+显示当前下面的所有进程
+ps -ef|grep java
+
+
+
+
+
+
+云彩做翻盘http://ci.yonyou.com/jenkins/
+在表头选择NCC_YC_Show
+在下面找到check.show
+出现页面点击立即构建，等待完成即可
+
+
+
+查看日志账号密码：
+172.20.14.185 
+用户  root/ufsoft
+exports/log/checkbiz
+
+
+清除nc缓存
+先win+r调出运行界面，然后在小窗口中打.,然后就直接可以出来了。
+
+
+内网配置微信信息
+www.yonyouyc.com/gwmanage/home/index
+账号kim
+密码yonyou2016
+
+
+
+html5中data-bind绑定事件
+http://www.cnblogs.com/baicj/p/5075912.html
+
+jenkins使用
+作用：对各种项目的自动化编译打包部署
+
+该路径做什么用的？
+http://maven.yonyou.com/
+
+
+如果想查看某个模块是不是在正常启动，用什么路径！
+
+
+@Autowired与@Resource的区别：
+@Resource注解在字段上，这样就不用写setter方法了，并且这个注解是属于J2EE的，减少了与spring的耦合。
+如果name属性一旦指定，就只会按照名称进行装配
+@Resource(name="baseDao")          
+private BaseDao baseDao;
+
+
+@Autowired() 
+@Qualifier("baseDao")
+private BaseDao baseDao;
+
+
+抽象类及其子类之间关系
+1.父类为抽象类，子类不是抽象类，那么子类必须实现父类的所有的抽象方法。
+2.父类为抽象类，子类也是抽象类，那么子类可以选择性的实现父类中的抽象方法。
+3.抽象类中可以有非抽象的方法
+
+
+日志打印
+logger Back日志打印
+
+
+
+idea下载代码使用过程
+从gitlab上面获得秘钥，在cvs--checkout from ... 这个时候下载的代码是master,需要转化为develop
+点击下面的git:master按钮,转化为。。。
+如果里面有csv这样的文件，只要这一个文件，
+本地的maven文件不要提交在git里面，
+换jdk版本project stru..
+在srtting中替换maven的路径
+找到启动文件所在的位置
+
+
+
+查看dubbo服务路径
+172.20.14.194:8080/governance/services
+账号密码都是root
+
+
+show环境上面查看dubbo服务
+http://172.20.14.194:8080/governance/services/cpu-checkbiz-show/com.yonyou.yuncai.checkbiz.itf.check.pu.IPuCheckBill/providers
+
+
+写好的java文件，就是加载不了
+1.查看注入方式是不是正确
+2.只要是加载文件出现问题，正常走的文件也是不能加载的
+3.mapper里面可以有dao里面没有写的方法
+4.尽量不要用*来查询，喜好每次都有限定条件
+5.扫描文件是在spring-config.xml文件中
+
+
+查看maven文件信息（maven.yonyou.com）
+
+
+
+事件不能正常触发
+页面不能正常显示
+两个事件分开写？为什么
+data-bind="click:quertExpert"
+data-bind="click:addinsideexpert"
+data-bind="click:addexternalexpert"
+  
+
+新建一个模块需要部署在Jenkins上面需提供内容
+139测试出现问题
+
+
+子类可以直接调用父类的父类，直接用super就可以
+
+
+字符串转化为json对象：
+如果字符串里面提供的字段对象里面没有歧视也是可以转化的
+
+
+数据库的物理删除、逻辑删除
+物理删除是直接将数据删除释放物理空间
+逻辑删除是通过某些字段控制来进行不显示
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
